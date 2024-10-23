@@ -24,4 +24,10 @@ public class EmpController {
         return "thymeleaf/empSelect";
     }
 
+    @GetMapping("/insert")
+    public String insertViewEmp(Model model) {
+        model.addAttribute("employees", new EmpVO());
+        return "thymeleaf/empInsert";
+    }
+
 }
