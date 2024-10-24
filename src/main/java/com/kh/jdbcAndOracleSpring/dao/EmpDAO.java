@@ -25,10 +25,10 @@ public class EmpDAO {
     public boolean empInsert(EmpVO vo) {
         int result = 0;
         String sql = "INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-        try{
-            jdbcTemplate.update(sql, vo.getEmpNO(), vo.getName(), vo.getJob(),
-                    vo.getMgr(),vo.getDate(),vo.getSal(),vo.getComm(),vo.getDeptNO());
-        } catch(Exception e ) {
+        try {
+            result = jdbcTemplate.update(sql, vo.getEmpNO(), vo.getName(), vo.getJob(),
+                    vo.getMgr(), vo.getDate(), vo.getSal(), vo.getComm(), vo.getDeptNO());
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return result > 0;
